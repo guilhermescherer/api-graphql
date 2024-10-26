@@ -1,0 +1,23 @@
+type User {
+    id: ID!
+    name: String!
+    email: String
+    cars: [Car]
+}
+
+type Car {
+    id: ID!
+    name: String!
+}
+
+type Query {
+    getAllCars : [Car]
+    getCarById(id: ID!) : Car
+    getAllUsers : [User]
+    getUserById(id: ID!) : User
+}
+
+type Mutation {
+    createUser(name: String!, email: String) : User
+    createCar(name: String!, userId: String!) : Car
+}
